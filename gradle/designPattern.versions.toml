@@ -1,0 +1,16 @@
+[metadata]
+
+[versions]
+app="0.1.0"
+lib="0.1.0"
+
+[libraries]
+[libraries.app]
+    group="jayo.arb.learn-j"
+    name="design-pattern-app"
+    version.ref="app"
+
+[libraries.lib]
+    group="jayo.arb.learn-j"
+    name="design-pattern-lib"
+    version.ref="lib"

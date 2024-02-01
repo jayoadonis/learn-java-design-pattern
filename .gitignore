@@ -1,0 +1,99 @@
+## STANDARD FILES
+**/build/
+!**/src/**/build/
+
+**/out/
+!**/src/**/out/
+
+**/dist*/
+!**/src/**/dist*/
+
+**/bin/
+!**/src/**/bin/
+## END: STANDARD FILES
+
+## TEMPORARY & BACK_UP FILES
+**/tmp*/
+**/temp*/
+!**/src/**/tmp*/
+!**/src/**/temp*/
+**/*.tmp*
+**/*.temp*
+#!**/src/**/*.tmp*
+#!**/src/**/*.temp*
+
+**/back-up*/
+**/bck-up*/
+!**/src/**/back-up*/
+!**/src/**/bck-up*/
+**/*.bck*
+**/*.back*
+#!**/src/**/*.bck*
+#!**/src/**/*.back*
+## END: TEMPORARY & BACK_UP FILES
+
+## IDEA INTELLIJ
+**/.idea*/
+!**/src/**/idea*/
+## END: IDEA INTELLIJ
+
+## ECLIPSE
+**/.project/
+**/.classpath/
+## END: ECLIPSE
+
+## VISUAL STUDIO
+**/.vs/
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+## END: VISUAL STUDIO
+
+## GRADLE
+**/.gradle/
+!**/gradle/gradle-wrapper.jar
+!**/gradle/gradle-wrapper.properties
+
+**/gradle-app.settings
+**/gradletasknamecache
+## END: GRADLE
+
+## PRIVATE & SECRETS
+**/src/**/resources/**/private*/
+**/src/**/resources/**/secret*/
+
+**/[sS]ecret*/
+**/[pP]rivate*/
+
+**/secret.properties
+**/private.properties
+**/.env
+## END: PRIVATE & SECRETS
+
+
+
