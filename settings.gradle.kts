@@ -193,17 +193,17 @@ settings.gradle.projectsEvaluated {
                 this.setDestinationDir( file( "${project.layout.buildDirectory.get().dir( "docs/javadoc/main" )}") );
             }
 
-            this.project.tasks.register<Javadoc>( "customTask_testJavaDoc" ) {
-                this.group = "build"
-                this.title = "Test JavaDoc";
-                this.source( SOURCE_SETS_EXTENSION.get( "test" ).allJava );
-                this.classpath = project.configurations.get( "testCompileClasspath" );
-                this.setDestinationDir( file( "${project.layout.buildDirectory.get().dir( "docs/javadoc/test" )}") );
-            }
+//            this.project.tasks.register<Javadoc>( "customTask_testJavaDoc" ) {
+//                this.group = "build"
+//                this.title = "Test JavaDoc";
+//                this.source( SOURCE_SETS_EXTENSION.get( "test" ).allJava );
+//                this.classpath = project.configurations.get( "testCompileClasspath" );
+//                this.setDestinationDir( file( "${project.layout.buildDirectory.get().dir( "docs/javadoc/test" )}") );
+//            }
 
             this.project.tasks.register<Jar>( "customTask_JavaDocJar" ) {
                 this.group = "build"
-                this.dependsOn( "customTask_mainJavaDoc", "customTask_testJavaDoc" );
+                this.dependsOn( "customTask_mainJavaDoc"/*, "customTask_testJavaDoc"*/ );
                 this.archiveClassifier.set( "documentation" )
                 this.from( project.layout.buildDirectory.get().dir( "docs/javadoc/" ) )
             }
@@ -281,7 +281,9 @@ settings.gradle.projectsEvaluated {
 //                this.dependsOn( tasks.withType<Jar>() )
 //            }
 
-
+            this.tasks.withType<Test>() {
+                this.useJUnitPlatform();
+            }
             this.tasks.withType<Zip>() {
                 this.archiveBaseName.set(projectNameCompound);
             }

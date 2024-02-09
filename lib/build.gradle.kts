@@ -1,3 +1,24 @@
+
+public sealed class TaskProperties {
+    public abstract val taskName: String?
+    public abstract val targetClassName: String
+    public companion object {
+        public fun create(
+            tasksName: String?,
+            targetClassName: String
+        ): TaskProperties {
+            require( targetClassName.isNotBlank() ) {
+                "::: targetClassName must not be 'null' nor 'empty'!"
+            }
+            return TaskPropertiesImpl( tasksName, targetClassName );
+        }
+    }
+    private data class TaskPropertiesImpl(
+        public override val taskName: String?,
+        public override val targetClassName: String
+    ): TaskProperties();
+}
+
 plugins {
     `java-library`
     `maven-publish`
@@ -16,7 +37,11 @@ val MODULE_NAME: String = "${
     }.${
         project.rootProject.name.replace( Regex( "[\\ */+-]+" ), "_" )
             .replace( Regex( "^[._]+|[._]+$" ), "" )
-    }.lib".lowercase();
+    }_lib".lowercase();
+val TASK_PROPERTIES_TESTS: Set<TaskProperties> = setOf(
+    TaskProperties.create( null, "$MODULE_NAME.behavioral.command.test.TestCommand000" ),
+    TaskProperties.create( null, "$MODULE_NAME.behavioral.visitor.test.TestVisitor000" )
+)
 
 println( "::: Module name: $MODULE_NAME" );
 println( String.format(
@@ -59,3 +84,15 @@ project.publishing {
 project.signing {
 
 }
+fun Test.defaultConfigTask( taskGroupName: String = "verification" ) {
+    this.group = taskGroupName;
+    this.useJUnitPlatform();
+}
+TASK_PROPERTIES_TESTS.forEach {taskPropertiesTest ->
+    project.tasks.register<Test>(
+        "${taskPropertiesTest.taskName?: taskPropertiesTest.targetClassName}@${project.name}"
+    ) {
+        this.defaultConfigTask();
+        this.filter.setIncludePatterns( taskPropertiesTest.targetClassName );
+    }
+};

@@ -1,4 +1,4 @@
-package jayo.arb.learn_j.design_pattern.lib.behavioral.visitor;
+package jayo.arb.learn_j.design_pattern_lib.behavioral.visitor;
 
 public class Wants extends Product {
 
@@ -17,5 +17,8 @@ public class Wants extends Product {
     @Override
     public void accept( Visitor visitor ) {
         visitor.visit( this );
+        //REM: TODO-HERE; do more logic...
     }
+
+
 }

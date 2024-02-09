@@ -1,4 +1,4 @@
-package jayo.arb.learn_j.design_pattern.lib.behavioral.visitor;
+package jayo.arb.learn_j.design_pattern_lib.behavioral.visitor;
 
 public class HolidayTaxCalc implements Visitor {
 

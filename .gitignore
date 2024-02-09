@@ -1,4 +1,4 @@
-## STANDARD FILES
+## STANDARD OUTPUT FILES
 **/build/
 !**/src/**/build/
 
@@ -10,7 +10,7 @@
 
 **/bin/
 !**/src/**/bin/
-## END: STANDARD FILES
+## END: STANDARD OUTPUT FILES
 
 ## TEMPORARY & BACK_UP FILES
 **/tmp*/

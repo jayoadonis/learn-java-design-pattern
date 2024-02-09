@@ -17,7 +17,7 @@ val MODULE_NAME: String = "${
     }.${
         project.rootProject.name.replace( Regex( "[\\ */+-.]+" ), "_")
             .replace( Regex( "^[._]+|[._]+$" ), "" )
-    }.app".lowercase();
+    }_app".lowercase();
 
 
 project.java {
