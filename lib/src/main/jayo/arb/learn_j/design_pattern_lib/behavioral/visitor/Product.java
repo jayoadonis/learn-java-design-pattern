@@ -1,5 +1,7 @@
 package jayo.arb.learn_j.design_pattern_lib.behavioral.visitor;
 
+import java.util.Date;
+
 public abstract class Product implements Visitable {
     private Product() {
         this( "FINAL_WTG", "WTG" );
@@ -17,7 +19,7 @@ public abstract class Product implements Visitable {
                 return;
             }
         }
-        throw new ExceptionInInitializerError( "Product id must be a proper value." );
+        throw new ExceptionInInitializerError( "Product 'id' must not be Empty nor Null" );
     }
     public Product( final Product product ) {
         this.id = product.id;
@@ -45,9 +47,15 @@ public abstract class Product implements Visitable {
     public double getPrice() {
         return this.price;
     }
+
+    /**
+     *
+     * @param price The value associated with the product.
+     * @throws IllegalArgumentException If the amount/price transitioned into a dept or deficit ( Becoming a negative value )
+     */
     public void setPrice( final double price ) {
         if( Double.compare( price, 0 ) < 0 )
-            return;
+            throw new IllegalArgumentException( "" );
         this.price = price;
     }
 
@@ -67,4 +75,9 @@ public abstract class Product implements Visitable {
     private final String id;
     private String name = "WTG";
     private double price = 0.0d;
+
+    //REM: TODO-HERE; more properties about this 'Product.class'
+//    private double mass;
+//    private final Date made;
+//    private final Date expire;
 }

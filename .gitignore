@@ -96,4 +96,7 @@
 ## END: PRIVATE & SECRETS
 
 
-
+## BEGIN: Local bat file
+**/.*.bat
+**/.*.sh
+## END: Local bat file

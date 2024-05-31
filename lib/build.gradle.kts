@@ -26,6 +26,12 @@ plugins {
     signing
 }
 
+project.java {
+//    this.modularity.inferModulePath.set( true );
+    this.sourceCompatibility = JavaVersion.VERSION_1_9;
+    this.targetCompatibility = JavaVersion.VERSION_11;
+}
+
 project.version = designPattern.app.get().version.toString()
     .takeIf{ it.isNotBlank() }?: "0.1.0-SNAPSHOT";
 
@@ -43,12 +49,16 @@ val TASK_PROPERTIES_TESTS: Set<TaskProperties> = setOf(
     TaskProperties.create( null, "$MODULE_NAME.behavioral.visitor.test.TestVisitor000" )
 )
 
-println( "::: Module name: $MODULE_NAME" );
+
+
 println( String.format(
     "::: build.gradle.kts@%s[ %s:%s:%s ]",
     PROJECT_HASH_CODE,
     project.group, PROJECT_NAME_COMPOUND, project.version
 ))
+println( "::: Module name: $MODULE_NAME" );
+println( "::: Project sourceCompatibility: ${project.java.sourceCompatibility.majorVersion}" );
+println( "::: Project targetCompatibility: ${project.java.targetCompatibility.majorVersion}" );
 
 project.sourceSets {
     this.main {
@@ -71,9 +81,6 @@ project.sourceSets {
             this.setExcludes( listOf( "src/test/" ) );
         }
     }
-}
-project.java {
-//    this.modularity.inferModulePath.set( true );
 }
 project.dependencies {
 

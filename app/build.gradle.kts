@@ -5,6 +5,10 @@ plugins {
     signing
 }
 
+project.java {
+    this.sourceCompatibility = JavaVersion.VERSION_11;
+    this.targetCompatibility = JavaVersion.VERSION_11;
+}
 project.version = designPattern.app.get().version.toString()
     .takeIf { it.isNotBlank() }?: "0.0.0-SNAPSHOT"
 //project.group = "" //REM: Resolve it by the settings.gradle
