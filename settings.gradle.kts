@@ -42,6 +42,7 @@ settings.dependencyResolutionManagement {
 }
 
 settings.rootProject.name = "design-pattern"
+println(String.format("Gradle Version: %s", settings.gradle.gradleVersion ))
 
 settings.include( ":app" )
 settings.include( ":lib" )
@@ -130,7 +131,8 @@ settings.gradle.projectsEvaluated {
 
         if(
             JAVA_PLUGIN_IDS.any {
-                javaPluginId -> this.project.plugins.hasPlugin( javaPluginId )
+                javaPluginId -> this.project.plugins
+                .hasPlugin( javaPluginId )
             }
         ) {
             val SOURCE_SETS_EXTENSION: SourceSetContainer = this.project.extensions
