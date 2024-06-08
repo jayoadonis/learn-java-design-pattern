@@ -1,6 +1,4 @@
-package jayo.arb.learn_j.design_pattern_lib.behavioral.visitor;
-
-import java.util.Date;
+package jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor;
 
 public abstract class Product implements Visitable {
     private Product() {

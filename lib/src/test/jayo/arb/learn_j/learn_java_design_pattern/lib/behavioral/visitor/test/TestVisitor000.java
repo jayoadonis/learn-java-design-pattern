@@ -1,13 +1,12 @@
-package jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.test;
+package jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.test;
 
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.HolidayTaxCalc;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Necessity;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.NormalTaxCalc;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Product;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Visitor;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Wants;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.HolidayTaxCalc;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Necessity;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Visitor;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Wants;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.NormalTaxCalc;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Product;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -43,6 +42,8 @@ public class TestVisitor000 {
         this.taxer = new NormalTaxCalc();
         this.cake.setPrice( 40.09 );
         this.cake.accept( this.taxer );
+
+        Assertions.assertEquals( 0, Double.compare( 44.099, QuickUtil.round(this.cake.getPrice(), 3) ) );
         Assertions.assertNotEquals( 40.09, this.cake.getPrice() );
         Assertions.assertTrue( Double.compare( 40.09, this.cake.getPrice() ) < 0 );
         System.out.println( "::: " + this.cake );
@@ -67,5 +68,16 @@ public class TestVisitor000 {
         Assertions.assertNotEquals( 40.09, this.cake.getPrice() );
         Assertions.assertTrue( Double.compare( 40.09, this.cake.getPrice() ) < 0 );
         System.out.println( "::: " + this.cake );
+    }
+}
+
+class QuickUtil {
+    public static double round(double value, int places) {
+        if (places < 0)
+            throw new IllegalArgumentException("2nd param named 'places' should not be less than zero.");
+
+        final long factor = (long) Math.pow(10, places); //REM: 10^places, such as 10^1 == 10th place.
+        final long tmp = Math.round( (value * factor ) );//REM: n * (10^d), where n = target floating value, and d = the # of precision(s).
+        return (double) tmp / factor;
     }
 }

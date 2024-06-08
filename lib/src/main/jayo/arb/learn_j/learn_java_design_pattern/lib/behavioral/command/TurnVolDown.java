@@ -1,4 +1,4 @@
-package jayo.arb.learn_j.design_pattern_lib.behavioral.command;
+package jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command;
 
 public class TurnVolDown extends Command {
 

@@ -1,13 +1,13 @@
-package jayo.arb.learn_j.design_pattern_lib.behavioral.command.test;
+package jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.test;
 
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.Button;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.Command;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.IDevice;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.Television;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.TurnOff;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.TurnOn;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.TurnVolDown;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.TurnVolUp;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Button;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Television;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.TurnOff;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.TurnOn;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.TurnVolDown;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.TurnVolUp;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Command;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.IDevice;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;

@@ -1,16 +1,16 @@
 package jayo.arb.learn_j.design_pattern_app;
 
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.Button;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.Command;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.IDevice;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.Television;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.TurnOff;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.command.TurnOn;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Necessity;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.NormalTaxCalc;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Product;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Visitor;
-import jayo.arb.learn_j.design_pattern_lib.behavioral.visitor.Wants;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Button;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Command;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.IDevice;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Television;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.TurnOff;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.TurnOn;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Necessity;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.NormalTaxCalc;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Product;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Visitor;
+import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.visitor.Wants;
 
 public class MainExe {
     public static void main( String[] args ) {
