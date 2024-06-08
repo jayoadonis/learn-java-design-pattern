@@ -1,4 +1,4 @@
-package jayo.arb.learn_j.design_pattern_app.test;
+package jayo.arb.learn_j.learn_java_design_pattern.app.test;
 
 import org.junit.jupiter.api.Test;
 

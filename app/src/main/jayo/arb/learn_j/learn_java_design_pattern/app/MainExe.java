@@ -1,4 +1,4 @@
-package jayo.arb.learn_j.design_pattern_app;
+package jayo.arb.learn_j.learn_java_design_pattern.app;
 
 import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Button;
 import jayo.arb.learn_j.learn_java_design_pattern.lib.behavioral.command.Command;

@@ -27,7 +27,7 @@ plugins {
 }
 
 project.java {
-//    this.modularity.inferModulePath.set( true );
+    this.modularity.inferModulePath.set( true );
     this.sourceCompatibility = JavaVersion.VERSION_1_9;
     this.targetCompatibility = JavaVersion.VERSION_11;
 }
@@ -43,10 +43,10 @@ val MODULE_NAME: String = "${
     }.${
         project.rootProject.name.replace( Regex( "[\\ */+-]+" ), "_" )
             .replace( Regex( "^[._]+|[._]+$" ), "" )
-    }".lowercase();
+    }.${project.name}".lowercase();
 val TASK_PROPERTIES_TESTS: Set<TaskProperties> = setOf(
-    TaskProperties.create( null, "$MODULE_NAME.lib.behavioral.command.test.TestCommand000" ),
-    TaskProperties.create( null, "$MODULE_NAME.lib.behavioral.visitor.test.TestVisitor000" )
+    TaskProperties.create( null, "$MODULE_NAME.behavioral.command.test.TestCommand000" ),
+    TaskProperties.create( null, "$MODULE_NAME.behavioral.visitor.test.TestVisitor000" )
 )
 
 
