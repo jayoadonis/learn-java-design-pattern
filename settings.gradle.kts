@@ -41,7 +41,7 @@ settings.dependencyResolutionManagement {
     }
 }
 
-settings.rootProject.name = "design-pattern"
+settings.rootProject.name = "learn-java-design-pattern"
 println(String.format("Gradle Version: %s, %s", settings.gradle.gradleVersion,
     settings.rootProject.name ));
 
