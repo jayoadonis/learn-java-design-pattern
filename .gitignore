@@ -89,6 +89,7 @@
 
 **/[sS]ecret*/
 **/[pP]rivate*/
+!**/src/**/private_data_class/
 
 **/secret.properties
 **/private.properties

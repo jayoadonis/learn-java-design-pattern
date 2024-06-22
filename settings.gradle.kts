@@ -138,9 +138,12 @@ settings.gradle.projectsEvaluated {
         ) {
             val SOURCE_SETS_EXTENSION: SourceSetContainer = this.project.extensions
                 .getByType<SourceSetContainer>();
+            //REM: TODO-HERE[0x0]: might have a problem if 'subproject or submodule' does not have
+            //REM: TODO-HERE[0x0]: ~ a plugin apply named 'maven-publish' or 'ivy-publish'
+            //REM: TODO-HERE[0x0]: ~ Do a 'lateinit var' declaration...
             val PUBLISHING_EXTENSION: PublishingExtension = this.project.extensions
                 .getByType<PublishingExtension>();
-            val VERSION_CATALOGS: VersionCatalogsExtension = this.project.extensions
+            val VERSION_CATALOGS_EXTENSION: VersionCatalogsExtension = this.project.extensions
                 .getByType<VersionCatalogsExtension>();
 
             //REM: TODO-HERE...
@@ -168,7 +171,7 @@ settings.gradle.projectsEvaluated {
             }
 
             this.project.dependencies {
-                val TEST_API = VERSION_CATALOGS.named( "testAPI" );
+                val TEST_API = VERSION_CATALOGS_EXTENSION.named( "testAPI" );
                 val JUNIT_JUPITER_API = TEST_API.findLibrary( "junit-jupiter-api" ).get();
                 val JUNIT_JUPITER_ENGINE = TEST_API.findLibrary( "junit-jupiter-engine" ).get();
                 this.add( "testImplementation", JUNIT_JUPITER_API );
