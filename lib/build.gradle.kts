@@ -48,7 +48,8 @@ val MODULE_NAME: String = "${
 val TASK_PROPERTIES_TESTS: Set<TaskProperties> = setOf(
     TaskProperties.create( null, "$MODULE_NAME.behavioral.command.test.TestCommand000" ),
     TaskProperties.create( null, "$MODULE_NAME.behavioral.visitor.test.TestVisitor000" ),
-    TaskProperties.create( null, "$MODULE_NAME.structural.decorator.test.TestDecorator" )
+    TaskProperties.create( null, "$MODULE_NAME.structural.decorator.test.TestDecorator" ),
+    TaskProperties.create( null, "$MODULE_NAME.creational.prototype.test.TestPrototype" )
 )
 
 

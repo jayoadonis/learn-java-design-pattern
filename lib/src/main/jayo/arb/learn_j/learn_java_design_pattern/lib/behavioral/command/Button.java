@@ -15,4 +15,5 @@ public class Button {
     }
 
     private Command command;
+
 }
